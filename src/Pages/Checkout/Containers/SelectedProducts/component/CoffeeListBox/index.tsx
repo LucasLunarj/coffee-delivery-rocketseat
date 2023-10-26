@@ -8,30 +8,37 @@ import {
   RemoveButton,
 } from "./styles";
 
-
 import { Minus, Plus, Trash } from "phosphor-react";
 import { CoffeeListContext } from "../../../../../../contexts/CoffeListContext";
 
+interface propsTypes {
+  img: string;
+  coffeeTitle: string;
+  amount: number;
+  index: number;
+  id: string;
+  price: number;
+}
 
-export function CoffeeListBox(props) {
-  const { img, coffeeTitle, amount, index, id, price } = props
-  const context = useContext(CoffeeListContext)
-  const convertedPrice = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  })
+export function CoffeeListBox(props: propsTypes) {
+  const { img, coffeeTitle, amount, index, id, price } = props;
+  const context = useContext(CoffeeListContext);
+  const convertedPrice = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
   function handleIncrement() {
-    context.dispatch({ type: "INCREMENT_FILTERED_LIST", payload: id })
-
+    event.preventDefault();
+    context.dispatch({ type: "INCREMENT_FILTERED_LIST", payload: id });
   }
   function handleDecrement() {
-    context.dispatch({ type: "DECREMENT_FILTERED_LIST", payload: id })
-
+    event.preventDefault();
+    context.dispatch({ type: "DECREMENT_FILTERED_LIST", payload: id });
   }
   function handleRemove() {
-    context.dispatch({ type: 'REMOVE', payload: index })
-    context.dispatch({ type: 'IS_NOT_ACTIVE', payload: id })
-
+    event.preventDefault();
+    context.dispatch({ type: "REMOVE", payload: index });
+    context.dispatch({ type: "IS_NOT_ACTIVE", payload: id });
   }
   return (
     <CoffeeItemContainer>

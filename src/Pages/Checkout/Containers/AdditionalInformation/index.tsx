@@ -24,7 +24,7 @@ export function AdditionalInformation() {
   const { register } = useFormContext();
   function handleSelectPaymentMethod(payment: string) {
     context.dispatch({ type: "PAYMENT_METHOD", payload: payment });
-    const test = document.querySelector("div");
+    const test = document.querySelector(".money");
     console.log(test, "test");
   }
 
@@ -100,15 +100,24 @@ export function AdditionalInformation() {
             </div>
           </PaymentMethodTitleContainer>
           <PaymentOptionContainer>
-            <div onClick={() => handleSelectPaymentMethod("Cartão de Crédito")}>
+            <div
+              className="credit-card"
+              onClick={() => handleSelectPaymentMethod("Cartão de Crédito")}
+            >
               <CreditCard size={16} />
               <p>CARTÃO DE CRÉDITO</p>
             </div>
-            <div onClick={() => handleSelectPaymentMethod("Cartão de Débito")}>
+            <div
+              className="debit-card"
+              onClick={() => handleSelectPaymentMethod("Cartão de Débito")}
+            >
               <Bank size={16} />
               <p>CARTÃO DE DÉBITO</p>
             </div>
-            <div onClick={() => handleSelectPaymentMethod("Dinheiro")}>
+            <div
+              className="money"
+              onClick={() => handleSelectPaymentMethod("Dinheiro")}
+            >
               <Money size={16} />
               <p>Dinheiro</p>
             </div>

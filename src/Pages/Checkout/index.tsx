@@ -32,7 +32,7 @@ export function Checkout() {
         <FormProvider {...methods}>
           <AdditionalInformation />
 
-          <SelectedProducts submit={handleGetFormData} />
+          <SelectedProducts />
         </FormProvider>
       </form>
     </CheckoutContainer>

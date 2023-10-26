@@ -14,10 +14,8 @@ import {
 import { CoffeeListContext } from "../../../../contexts/CoffeListContext";
 import { NavLink } from "react-router-dom";
 import { useFormContext } from "react-hook-form";
-interface type {
-  submit: () => void;
-}
-export function SelectedProducts(props: type) {
+
+export function SelectedProducts() {
   const context = useContext(CoffeeListContext);
   const { handleSubmit } = useFormContext();
   const { state } = context;
@@ -66,12 +64,7 @@ export function SelectedProducts(props: type) {
             </TotalPrice>
           </PriceAreaContainer>
           <NavLink to={"/success"}>
-            <ConfirmButton
-              onClick={() => handleSubmit(props.submit)}
-              type="submit"
-            >
-              Confirmar Pedido
-            </ConfirmButton>
+            <ConfirmButton type="submit">Confirmar Pedido</ConfirmButton>
           </NavLink>
         </CoffeeList>
       </CoffeeChartListContainer>
