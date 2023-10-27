@@ -30,7 +30,7 @@ export function Header() {
     setSelectedState(states.filter((item) => item.id === id));
   }
   function handleConvert(id: string) {
-    if (switchChart == false) {
+    if (switchChart === false && context.state.filteredList.length > 1) {
       context.dispatch({ type: "CONVERT_FILTERED_TO_OBJECT", payload: id });
     }
     setSwitchChart(true);
@@ -39,12 +39,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <NavLink to="/">
-        <img
-          disabled={switchChart}
-          src={logo}
-          alt=""
-          onClick={() => setSwitchChart(false)}
-        />
+        <img src={logo} alt="" onClick={() => setSwitchChart(false)} />
       </NavLink>
       <div>
         <LocationContainer onClick={() => handleOpenCloseMenu()}>

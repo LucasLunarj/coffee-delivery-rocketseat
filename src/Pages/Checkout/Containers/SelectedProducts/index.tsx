@@ -23,7 +23,7 @@ export function SelectedProducts() {
     style: "currency",
     currency: "BRL",
   });
-  const total = state.filteredList.reduce((accumulator, current) => {
+  const total = state.filteredList.reduce<number>((accumulator, current) => {
     return accumulator + current.price;
   }, 0);
   console.log(state.filteredList.length);

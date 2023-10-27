@@ -147,7 +147,7 @@ export const PaymentOptionContainer = styled.div`
     line-height: 160%;
 
     text-transform: uppercase;
-
+    border: 1px solid transparent;
     background-color: ${(props) => props.theme["base-button"]};
     cursor: pointer;
   }

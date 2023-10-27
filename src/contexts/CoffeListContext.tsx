@@ -1,8 +1,8 @@
 import { createContext, useReducer, ReactNode } from "react";
-import { CoffeeItens } from "../data/data";
+import { CoffeDataType, CoffeeItens } from "../data/data";
 import { reducer } from "../reducers/coffeeReducer";
 
-export const CoffeeListContext = createContext(null);
+export const CoffeeListContext = createContext<CoffeDataType | null>(null);
 
 type props = {
   children: ReactNode;
