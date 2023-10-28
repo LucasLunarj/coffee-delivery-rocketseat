@@ -11,7 +11,7 @@ export const CoffeeListProvider = ({ children }: props) => {
   const [state, dispatch] = useReducer(reducer, CoffeeItens);
 
   return (
-    <CoffeeListContext.Provider value={{ state, dispatch }}>
+    <CoffeeListContext.Provider value={value as { state; dispatch }}>
       {children}
     </CoffeeListContext.Provider>
   );
