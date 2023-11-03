@@ -1,5 +1,5 @@
 import { produce } from "immer";
-import { CoffeDataType } from "../data/data";
+import { CoffeDataType, coffeeItensType } from "../data/data";
 import { Actions } from "./reducer-types/types";
 
 export const reducer = (state: CoffeDataType, action: Actions) => {
@@ -7,12 +7,12 @@ export const reducer = (state: CoffeDataType, action: Actions) => {
     case "INCREMENT":
       return {
         ...state,
-        list: state.list.map((item) => {
+        list: state.list.map((item: coffeeItensType) => {
           if (item.id === action.payload) {
             return {
               ...item,
-              amount: item.amount + 1,
-              price: item.price + 9.9,
+              amount: item.amount! + 1,
+              price: item.price! + 9.9,
             };
           }
           return item;
@@ -25,8 +25,8 @@ export const reducer = (state: CoffeDataType, action: Actions) => {
           if (item.id === action.payload) {
             return {
               ...item,
-              amount: item.amount - 1,
-              price: item.price - 9.9,
+              amount: item.amount! - 1,
+              price: item.price! - 9.9,
             };
           }
           return item;

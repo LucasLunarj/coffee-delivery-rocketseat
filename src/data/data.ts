@@ -15,20 +15,20 @@ import Hawaiian from "../assets/Coffee-Pictures/Hawaiian.png";
 import Arabic from "../assets/Coffee-Pictures/Arabic.png";
 import Irish from "../assets/Coffee-Pictures/Irish.png";
 
-export interface coffeItensType {
-  id: string;
-  img: string;
-  coffeeTitle: string;
-  typeOfCoffee: string[];
-  coffeeDescription: string;
-  price: number;
-  amount: number;
-  active: boolean;
+export interface coffeeItensType {
+  id: string | null;
+  img: string | null;
+  coffeeTitle: string | null;
+  typeOfCoffee: string[] | null;
+  coffeeDescription: string | null;
+  price: number | null;
+  amount: number | null;
+  active: boolean | null;
 }
 
 export interface CoffeDataType {
-  list: coffeItensType[];
-  filteredList: coffeItensType[];
+  list: coffeeItensType[];
+  filteredList: coffeeItensType[] | null;
   menuSwitcher: boolean;
   deliveryInformation: object;
   paymentMethodSelected: string;

@@ -1,16 +1,16 @@
 import { v4 as uuidv4 } from "uuid";
 
-interface dataStatesType {
-  state: string;
-  uf: string;
-  id: string;
-}
+// interface dataStatesType {
+//   state: string;
+//   uf: string;
+//   id: string;
+// }
 
-interface AllDataTypes {
-  dataStates: Array<dataStatesType>;
-}
+// interface AllDataTypes {
+//   dataStates: Array<dataStatesType>;
+// }
 
-export const dataStates: AllDataTypes = [
+export const dataStates = [
   { state: "Acre", uf: "AC", id: uuidv4() },
   { state: "Alagoas", uf: "AL", id: uuidv4() },
   { state: "Amapá", uf: "AP", id: uuidv4() },

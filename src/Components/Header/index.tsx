@@ -10,15 +10,10 @@ import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CoffeeListContext } from "../../contexts/CoffeListContext";
 import { dataStates } from "../../data/dataStates";
-import { CoffeDataType } from "../../data/data";
-
-interface contextTypes {
-  dispatch: any;
-  state: CoffeDataType;
-}
+import { CoffeDataType, coffeItensType } from "../../data/data";
 
 export function Header() {
-  const context = useContext<contextTypes>(CoffeeListContext);
+  const context = useContext(CoffeeListContext);
 
   const [states, setStates] = useState(dataStates);
   const [selectedState, setSelectedState] = useState([

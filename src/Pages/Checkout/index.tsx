@@ -22,7 +22,7 @@ export function Checkout() {
     resolver: zodResolver(FormDataSchema),
   });
 
-  function handleGetFormData(data: string) {
+  function handleGetFormData(data: object) {
     console.log(data);
     context.dispatch({ type: "GATHERING_DATA_INFORMATION", payload: data });
   }
