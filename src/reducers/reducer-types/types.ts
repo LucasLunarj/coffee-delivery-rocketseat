@@ -9,7 +9,10 @@ type DecrementFilteredType = {
   payload: string;
 };
 type filteredListType = { type: "FILTERED-LIST"; payload: string };
-type ConvertedFilteredToObjectType = { type: "CONVERT_FILTERED_TO_OBJECT" };
+type ConvertedFilteredToObjectType = {
+  type: "CONVERT_FILTERED_TO_OBJECT";
+  state: object;
+};
 type isActive = { type: "IS_ACTIVE"; payload: string };
 type isNotActive = { type: "IS_NOT_ACTIVE"; payload: string };
 type remove = { type: "REMOVE"; payload: number };

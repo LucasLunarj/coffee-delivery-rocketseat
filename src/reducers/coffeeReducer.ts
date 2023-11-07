@@ -41,7 +41,7 @@ export const reducer = (state: CoffeDataType, action: Actions) => {
       // })
 
       return produce(state, (draft) => {
-        draft.filteredList.push(
+        draft.filteredList?.push(
           draft.list.filter((item) => item.id === action.payload)
         );
       });
@@ -49,7 +49,7 @@ export const reducer = (state: CoffeDataType, action: Actions) => {
       console.log(state.filteredList, "lunita");
       return {
         ...state,
-        filteredList: state.filteredList.map((item) => {
+        filteredList: state.filteredList?.map((item) => {
           return { ...state.filteredList, ...item[0] };
         }),
       };
@@ -57,7 +57,7 @@ export const reducer = (state: CoffeDataType, action: Actions) => {
       console.log(state);
       return {
         ...state,
-        filteredList: state.filteredList.map((item) => {
+        filteredList: state.filteredList?.map((item) => {
           if (action.payload === item.id) {
             return {
               ...item,
@@ -108,7 +108,7 @@ export const reducer = (state: CoffeDataType, action: Actions) => {
     case "REMOVE":
       console.log(state.filteredList);
       return produce(state, (draft) => {
-        draft.filteredList.splice(action.payload, 1);
+        draft.filteredList?.splice(action.payload, 1);
       });
 
     // return ({

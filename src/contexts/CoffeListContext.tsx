@@ -1,10 +1,10 @@
 import { createContext, useReducer, ReactNode, Dispatch } from "react";
-import { CoffeDataType, CoffeeItens } from "../data/data";
+import { CoffeeDataType, CoffeeItens } from "../data/data";
 import { reducer } from "../reducers/coffeeReducer";
 import { Actions } from "../reducers/reducer-types/types";
 
 interface ContextType {
-  state: CoffeDataType[];
+  state: CoffeeDataType;
   dispatch: Dispatch<Actions>;
 }
 
@@ -14,7 +14,7 @@ type props = {
   children: ReactNode;
 };
 export const CoffeeListProvider = ({ children }: props) => {
-  const [state, dispatch] = useReducer(reducer, CoffeeItens);
+  const [state, dispatch] = useReducer(reducer, CoffeeItens as CoffeeDataType);
 
   return (
     <CoffeeListContext.Provider value={{ state, dispatch }}>

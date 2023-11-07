@@ -10,7 +10,6 @@ import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CoffeeListContext } from "../../contexts/CoffeListContext";
 import { dataStates } from "../../data/dataStates";
-import { CoffeDataType, coffeItensType } from "../../data/data";
 
 export function Header() {
   const context = useContext(CoffeeListContext);
@@ -22,18 +21,18 @@ export function Header() {
   const [switchChart, setSwitchChart] = useState<boolean>(false);
 
   function handleOpenCloseMenu() {
-    context.dispatch({
+    context?.dispatch({
       type: "OPEN_AND_CLOSE_MENU",
-      payload: !context.state.menuSwitcher,
+      payload: !context?.state.menuSwitcher,
     });
   }
   function handleCloseMenuAndSelectState(id: string) {
-    context.dispatch({ type: "OPEN_AND_CLOSE_MENU", payload: false });
+    context?.dispatch({ type: "OPEN_AND_CLOSE_MENU", payload: false });
     setSelectedState(states.filter((item) => item.id === id));
   }
   function handleConvert(id: string) {
-    if (switchChart === false && context.state.filteredList.length > 1) {
-      context.dispatch({ type: "CONVERT_FILTERED_TO_OBJECT", payload: id });
+    if (switchChart === false && context?.state.filteredList.length > 1) {
+      context?.dispatch({ type: "CONVERT_FILTERED_TO_OBJECT", payload: id });
     }
     setSwitchChart(true);
   }
@@ -48,7 +47,7 @@ export function Header() {
           <MapPin weight="fill" size={22} />
           <p>{`${selectedState[0].state}, ${selectedState[0].uf} `}</p>
         </LocationContainer>
-        {context.state.menuSwitcher === true ? (
+        {context?.state.menuSwitcher === true ? (
           <MenuContainer>
             {states.map((item) => {
               return (
@@ -65,14 +64,14 @@ export function Header() {
         <div>
           <NavLink
             to="/checkout"
-            onClick={() => handleConvert(context.state.filteredList.id)}
+            onClick={() => handleConvert(context?.state.filteredList.id)}
           >
             <button disabled={switchChart}>
               <ShoppingCart weight="fill" size={22} />
             </button>
           </NavLink>
           <CartItemsAmount>
-            <p>{context.state.filteredList.length}</p>
+            <p>{context?.state.filteredList.length}</p>
           </CartItemsAmount>
         </div>
       </div>

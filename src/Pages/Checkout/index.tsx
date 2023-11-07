@@ -22,9 +22,9 @@ export function Checkout() {
     resolver: zodResolver(FormDataSchema),
   });
 
-  function handleGetFormData(data: object) {
+  function handleGetFormData(data: string) {
     console.log(data);
-    context.dispatch({ type: "GATHERING_DATA_INFORMATION", payload: data });
+    context?.dispatch({ type: "GATHERING_DATA_INFORMATION", payload: data });
   }
   return (
     <CheckoutContainer>

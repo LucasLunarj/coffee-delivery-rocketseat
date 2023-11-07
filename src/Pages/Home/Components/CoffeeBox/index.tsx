@@ -11,12 +11,13 @@ import {
 import { useContext, useState } from "react";
 import { CoffeeListContext } from "../../../../contexts/CoffeListContext";
 interface CoffeeBoxPropertiesTypes {
-  coffeeTitle: string;
+  coffeeTitle: string | null;
   id: string;
   img: string;
   coffeeDescription: string;
   amount: number;
   typeOfCoffee: [];
+  active: boolean;
 }
 
 export function CoffeeBox(props: CoffeeBoxPropertiesTypes) {
@@ -26,18 +27,18 @@ export function CoffeeBox(props: CoffeeBoxPropertiesTypes) {
   const context = useContext(CoffeeListContext);
   const { state } = context;
   function handleDecrement() {
-    context.dispatch({
+    context?.dispatch({
       type: "DECREMENT",
       payload: id,
     });
   }
   function handleIncrement() {
-    context.dispatch({ type: "INCREMENT", payload: id });
+    context?.dispatch({ type: "INCREMENT", payload: id });
   }
 
   function handleAddItenToCart(id: string) {
-    context.dispatch({ type: "IS_ACTIVE", payload: id });
-    context.dispatch({ type: "FILTERED-LIST", payload: id });
+    context?.dispatch({ type: "IS_ACTIVE", payload: id });
+    context?.dispatch({ type: "FILTERED-LIST", payload: id });
   }
 
   return (

@@ -28,17 +28,17 @@ export function CoffeeListBox(props: propsTypes) {
     currency: "BRL",
   });
   function handleIncrement() {
-    event.preventDefault();
-    context.dispatch({ type: "INCREMENT_FILTERED_LIST", payload: id });
+    event?.preventDefault();
+    context?.dispatch({ type: "INCREMENT_FILTERED_LIST", payload: id });
   }
   function handleDecrement() {
-    event.preventDefault();
-    context.dispatch({ type: "DECREMENT_FILTERED_LIST", payload: id });
+    event?.preventDefault();
+    context?.dispatch({ type: "DECREMENT_FILTERED_LIST", payload: id });
   }
   function handleRemove() {
-    event.preventDefault();
-    context.dispatch({ type: "REMOVE", payload: index });
-    context.dispatch({ type: "IS_NOT_ACTIVE", payload: id });
+    event?.preventDefault();
+    context?.dispatch({ type: "REMOVE", payload: index });
+    context?.dispatch({ type: "IS_NOT_ACTIVE", payload: id });
   }
   return (
     <CoffeeItemContainer>

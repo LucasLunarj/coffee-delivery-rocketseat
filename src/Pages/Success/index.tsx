@@ -29,8 +29,8 @@ export function Success() {
               <p>
                 Entrega em{" "}
                 <span>
-                  {context.state.deliveryInformation.street},{" "}
-                  {context.state.deliveryInformation.number}
+                  {context?.state.deliveryInformation.street},{" "}
+                  {context?.state.deliveryInformation.number}
                 </span>
               </p>
               <p>{`${state.deliveryInformation.neighboorhood}- ${state.deliveryInformation.city}, ${state.deliveryInformation.uf}`}</p>

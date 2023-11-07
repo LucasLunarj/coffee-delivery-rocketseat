@@ -21,15 +21,14 @@ import { CoffeeListContext } from "../../../../contexts/CoffeListContext";
 
 export function AdditionalInformation() {
   const context = useContext(CoffeeListContext);
-  console.log(context.state);
   const { register } = useFormContext();
   function handleSelectPaymentMethod(payment: string) {
-    context.dispatch({ type: "PAYMENT_METHOD", payload: payment });
+    context?.dispatch({ type: "PAYMENT_METHOD", payload: payment });
     const test = document.querySelector(".money");
     console.log(test, "test");
   }
 
-  if (context.state.paymentMethodSelected === "Cartão de Crédito") {
+  if (context?.state.paymentMethodSelected === "Cartão de Crédito") {
     document.querySelector(".credit-card").style.border = "1px solid #4B2995 ";
     document.querySelector(".debit-card").style.border = "none";
     document.querySelector(".money").style.border = "none";
@@ -39,7 +38,7 @@ export function AdditionalInformation() {
     document.querySelector(".credit-card").style.border = "none ";
     document.querySelector(".money").style.border = "none ";
   }
-  if (context.state.paymentMethodSelected === "Dinheiro") {
+  if (context?.state.paymentMethodSelected === "Dinheiro") {
     document.querySelector(".money").style.border = "1px solid #4B2995 ";
     document.querySelector(".debit-card").style.border = "none";
     document.querySelector(".credit-card").style.border = "none ";

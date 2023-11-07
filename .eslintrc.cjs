@@ -5,8 +5,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
@@ -20,5 +20,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  rules: {},
+  rules: {
+    'prettier/prettier': ['off', { singleQuote: true }]
+  },
 };

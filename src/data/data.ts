@@ -26,15 +26,15 @@ export interface coffeeItensType {
   active: boolean | null;
 }
 
-export interface CoffeDataType {
+export type CoffeeDataType = {
   list: coffeeItensType[];
-  filteredList: coffeeItensType[] | null;
+  filteredList: coffeeItensType[];
   menuSwitcher: boolean;
   deliveryInformation: object;
   paymentMethodSelected: string;
-}
+};
 
-export const CoffeeItens: CoffeDataType = {
+export const CoffeeItens: CoffeeDataType = {
   list: [
     {
       id: uuidv4(),
