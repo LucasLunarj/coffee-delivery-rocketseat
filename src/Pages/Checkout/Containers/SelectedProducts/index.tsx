@@ -13,17 +13,16 @@ import {
 } from "./styles";
 import { CoffeeListContext } from "../../../../contexts/CoffeListContext";
 import { NavLink } from "react-router-dom";
-import { useFormContext } from "react-hook-form";
+import { coffeeItensType } from "../../../../data/data";
 
 export function SelectedProducts() {
   const context = useContext(CoffeeListContext);
-  const { handleSubmit } = useFormContext();
   const { state } = context;
   const convertedPrice = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
-  const total = state.filteredList.reduce<number>((accumulator, current) => {
+  const total = state.filteredList.reduce((accumulator, current) => {
     return accumulator + current.price;
   }, 0);
   console.log(state.filteredList.length);
@@ -32,7 +31,7 @@ export function SelectedProducts() {
       <h2>Cafés selecionados</h2>
       <CoffeeChartListContainer>
         <CoffeeList>
-          {state.filteredList?.map((item, index) => (
+          {state.filteredList?.map((item: coffeeItensType, index: number) => (
             <CoffeeListBox key={item.id} index={index} {...item} />
           ))}
 

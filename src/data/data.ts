@@ -16,14 +16,14 @@ import Arabic from "../assets/Coffee-Pictures/Arabic.png";
 import Irish from "../assets/Coffee-Pictures/Irish.png";
 
 export interface coffeeItensType {
-  id: string | null;
-  img: string | null;
-  coffeeTitle: string | null;
-  typeOfCoffee: string[] | null;
-  coffeeDescription: string | null;
-  price: number | null;
-  amount: number | null;
-  active: boolean | null;
+  id: string;
+  img: string;
+  coffeeTitle: string;
+  typeOfCoffee: string[];
+  coffeeDescription: string;
+  price: number;
+  amount: number;
+  active: boolean;
 }
 
 export type CoffeeDataType = {

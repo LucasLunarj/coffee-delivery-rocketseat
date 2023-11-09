@@ -34,7 +34,8 @@ export function AdditionalInformation() {
     document.querySelector(".money").style.border = "none";
   }
   if (context.state.paymentMethodSelected === "Cartão de Débito") {
-    document.querySelector(".debit-card").style.border = "1px solid #4B2995 ";
+    document.querySelector<HTMLElement | null>(".debit-card").style.border =
+      "1px solid #4B2995 ";
     document.querySelector(".credit-card").style.border = "none ";
     document.querySelector(".money").style.border = "none ";
   }

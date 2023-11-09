@@ -14,7 +14,6 @@ import { CoffeeListContext } from "../../contexts/CoffeListContext";
 export function Success() {
   const context = useContext(CoffeeListContext);
   const { state } = context;
-  console.log(context.state, "success");
   return (
     <SuccessOrderContainer>
       <div>

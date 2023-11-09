@@ -10,7 +10,7 @@ import {
 
 import { useContext, useState } from "react";
 import { CoffeeListContext } from "../../../../contexts/CoffeListContext";
-interface CoffeeBoxPropertiesTypes {
+export interface CoffeeBoxPropertiesTypes {
   coffeeTitle: string | null;
   id: string;
   img: string;
@@ -23,7 +23,7 @@ interface CoffeeBoxPropertiesTypes {
 export function CoffeeBox(props: CoffeeBoxPropertiesTypes) {
   const { coffeeTitle, id, img, coffeeDescription, amount, typeOfCoffee } =
     props;
-  const [actualState, setActualState] = useState(false);
+  // const [actualState, setActualState] = useState(false);
   const context = useContext(CoffeeListContext);
   const { state } = context;
   function handleDecrement() {
