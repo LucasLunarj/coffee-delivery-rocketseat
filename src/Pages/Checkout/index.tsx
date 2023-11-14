@@ -6,6 +6,16 @@ import { useContext } from "react";
 import { CoffeeListContext } from "../../contexts/CoffeListContext";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+interface Formtypes {
+  cep: number | undefined;
+  street: string | undefined;
+  complemento: string | undefined;
+  neighboorhood: string | undefined;
+  number: number | undefined;
+  uf: string | undefined;
+  city: string | undefined;
+}
+
 const FormDataSchema = z.object({
   cep: z.number(),
   street: z.string(),
@@ -22,7 +32,7 @@ export function Checkout() {
     resolver: zodResolver(FormDataSchema),
   });
 
-  function handleGetFormData(data: string) {
+  function handleGetFormData(data: Formtypes) {
     console.log(data);
     context?.dispatch({ type: "GATHERING_DATA_INFORMATION", payload: data });
   }

@@ -1,10 +1,10 @@
 import {
-  AboutContainer,
   BackgroundContainer,
-  CoffeeContainer,
-  PackageContainer,
+  AboutContainer,
   ShoppingCartContainer,
   TimerContainer,
+  PackageContainer,
+  CoffeeContainer,
 } from "./styles";
 import coffee from "../../../../assets/cofee-logo.svg";
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";

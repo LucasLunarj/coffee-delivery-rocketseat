@@ -8,7 +8,7 @@ interface ContextType {
   dispatch: Dispatch<Actions>;
 }
 
-export const CoffeeListContext = createContext<ContextType | null>(null);
+export const CoffeeListContext = createContext(null as ContextType | null);
 
 type props = {
   children: ReactNode;
